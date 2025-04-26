@@ -1,0 +1,47 @@
+### Listar todos los envíos (GET)
+GET http://localhost:8080/envios
+Accept: application/json
+
+### Buscar un envío por ID (GET)
+GET http://localhost:8080/envios/1
+Accept: application/json
+
+### Crear un nuevo envío (válido) (POST)
+POST http://localhost:8080/envios
+Content-Type: application/json
+
+{
+  "id": 1,
+  "origen": "Valparaíso",
+  "destino": "Santiago",
+  "fechaEnvio": "2025-05-01",
+  "costo": 15000
+}
+
+### Crear un nuevo envío (inválido - origen vacío) (POST)
+POST http://localhost:8080/envios
+Content-Type: application/json
+
+{
+  "id": 2,
+  "origen": "",
+  "destino": "Viña del Mar",
+  "fechaEnvio": "2025-05-02",
+  "costo": 12000
+}
+
+### Actualizar un envío existente (PUT)
+PUT http://localhost:8080/envios/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "origen": "San Antonio",
+  "destino": "Santiago",
+  "fechaEnvio": "2025-05-03",
+  "costo": 18000
+}
+
+### Eliminar un envío (DELETE)
+DELETE http://localhost:8080/envios/1
+Accept: application/json
